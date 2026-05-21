@@ -549,3 +549,102 @@ input[type=number] { -moz-appearance: textfield; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #D4D4D2; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #AEAEAD; }
+
+/* ===== AFEGITS v2 (nous requisits 19/05) ===== */
+.new-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: #F5F3FF;
+  color: #5B21B6;
+  vertical-align: middle;
+}
+
+/* Imports cel·la (sol·licitat / atorgat / liquidat) */
+.imp-cell { display: flex; flex-direction: column; gap: 1px; }
+.imp-row  { display: flex; align-items: center; gap: 4px; font-size: 11px; }
+.imp-lbl  { color: #9B9B99; width: 46px; flex-shrink: 0; }
+.imp-sol  { color: #6B6B69; font-family: 'JetBrains Mono', monospace; }
+.imp-apr  { color: #1C1C1A; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+.imp-liq  { color: #059669; font-weight: 500; font-family: 'JetBrains Mono', monospace; }
+.imp-blq  { color: #DC2626; font-family: 'JetBrains Mono', monospace; }
+
+/* Cert badge */
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  background: #EEF2FF;
+  color: #3730A3;
+}
+
+/* Integració RRHH card */
+.int-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E3;
+  border-radius: 8px;
+}
+.int-icon {
+  width: 34px; height: 34px;
+  border-radius: 8px;
+  background: #F5F5F4;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: #6B6B69; flex-shrink: 0;
+}
+.int-info { flex: 1; min-width: 0; }
+.int-name { font-size: 12px; font-weight: 500; color: #1C1C1A; }
+.int-desc { font-size: 11px; color: #9B9B99; margin-top: 1px; }
+.int-status { display: flex; align-items: center; gap: 5px; margin-top: 3px; font-size: 11px; }
+.int-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.int-dot.ok   { background: #10B981; }
+.int-dot.warn { background: #F59E0B; }
+
+/* OCR confiança */
+.ocr-conf {
+  display: inline-block;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+}
+.ocr-conf.high { background: #ECFDF5; color: #065F46; }
+.ocr-conf.low  { background: #FEF3C7; color: #92400E; }
+.ocr-conf.none { color: #9B9B99; }
+
+/* Categoria card */
+.cat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.cat-card {
+  padding: 12px;
+  border: 1px solid #E5E5E3;
+  border-radius: 8px;
+  background: #FFFFFF;
+}
+.cat-card.new-cat { border-color: #A78BFA; background: #F5F3FF; }
+.cat-emoji { font-size: 18px; margin-bottom: 5px; }
+.cat-name  { font-size: 12px; font-weight: 500; color: #1C1C1A; }
+.cat-note  { font-size: 11px; color: #9B9B99; margin-top: 2px; }
+.cat-req   { font-size: 11px; color: #7C3AED; margin-top: 4px; }
+
+/* Restricció fiscal */
+.fiscal-block {
+  padding: 8px 12px;
+  background: #FEE2E2;
+  border-radius: 7px;
+  font-size: 12px;
+  color: #991B1B;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+}

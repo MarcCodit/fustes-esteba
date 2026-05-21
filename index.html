@@ -27,14 +27,18 @@
       <div class="sb-section">Principal</div>
       <a class="sb-item active" data-screen="dashboard"><i class="ti ti-layout-dashboard"></i>Dashboard</a>
       <a class="sb-item" data-screen="employees"><i class="ti ti-users"></i>Empleats</a>
-      <a class="sb-item" data-screen="expenses"><i class="ti ti-file-invoice"></i>Despeses<span class="sb-badge warn">3</span></a>
+      <a class="sb-item" data-screen="expenses"><i class="ti ti-file-invoice"></i>Despeses<span class="sb-badge warn">12</span></a>
+      <a class="sb-item" data-screen="validadors"><i class="ti ti-shield-check"></i>Validadors <span class="new-badge">NOU</span></a>
 
       <div class="sb-section">Configuració</div>
       <a class="sb-item" data-screen="rules"><i class="ti ti-settings"></i>Regles conveni</a>
+      <a class="sb-item" data-screen="categories"><i class="ti ti-tags"></i>Categories <span class="new-badge">NOU</span></a>
       <a class="sb-item" data-screen="calendar"><i class="ti ti-calendar"></i>Calendari laboral</a>
 
       <div class="sb-section">Sistema</div>
-      <a class="sb-item" data-screen="audit"><i class="ti ti-shield-check"></i>Auditoria<span class="sb-badge danger">12</span></a>
+      <a class="sb-item" data-screen="integracio"><i class="ti ti-refresh"></i>Integració RRHH <span class="new-badge">NOU</span></a>
+      <a class="sb-item" data-screen="ocr"><i class="ti ti-wand"></i>OCR / IA <span class="new-badge">NOU</span></a>
+      <a class="sb-item" data-screen="audit"><i class="ti ti-clipboard-list"></i>Auditoria<span class="sb-badge danger">5</span></a>
       <a class="sb-item" data-screen="reports"><i class="ti ti-table-export"></i>Exportació</a>
     </nav>
 
@@ -55,6 +59,7 @@
     <header class="topbar">
       <span class="topbar-title" id="topbar-title">Dashboard</span>
       <div class="topbar-actions">
+        <button class="btn sm" onclick="goTo('integracio')"><i class="ti ti-refresh"></i>Sync RRHH</button>
         <button class="btn icon-btn"><i class="ti ti-bell"></i></button>
       </div>
     </header>
@@ -65,24 +70,24 @@
       <section class="screen active" id="screen-dashboard">
         <div class="stats-row">
           <div class="stat">
-            <div class="stat-label">Despeses aquest mes</div>
-            <div class="stat-val">47</div>
-            <div class="stat-sub success"><i class="ti ti-trending-up"></i> +8 vs mes anterior</div>
-          </div>
-          <div class="stat">
-            <div class="stat-label">Total a liquidar</div>
-            <div class="stat-val">2.840 €</div>
-            <div class="stat-sub muted">de 3.140 € presentats</div>
-          </div>
-          <div class="stat">
-            <div class="stat-label">Pendents revisió</div>
-            <div class="stat-val">3</div>
+            <div class="stat-label">Pendents validació</div>
+            <div class="stat-val">12</div>
             <div class="stat-sub warning"><i class="ti ti-alert-triangle"></i> requereixen acció</div>
           </div>
           <div class="stat">
-            <div class="stat-label">Empleats actius</div>
-            <div class="stat-val">18</div>
-            <div class="stat-sub muted">2 nous aquest mes</div>
+            <div class="stat-label">Import sol·licitat (mes)</div>
+            <div class="stat-val">4.218 €</div>
+            <div class="stat-sub muted">total presentat</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Import atorgat</div>
+            <div class="stat-val">3.482 €</div>
+            <div class="stat-sub muted">aprovat validadors</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Import liquidat</div>
+            <div class="stat-val success-text">2.916 €</div>
+            <div class="stat-sub success"><i class="ti ti-check"></i> final empleats</div>
           </div>
         </div>
 
@@ -90,18 +95,19 @@
           <div class="card">
             <div class="card-header"><span class="card-title">Despeses per tipus · Maig 2026</span></div>
             <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
-              <div class="bar-row"><span class="bar-label">Restaurant</span><div class="bar-track"><div class="bar-fill blue" style="width:62%"></div></div><span class="bar-count">29</span></div>
-              <div class="bar-row"><span class="bar-label">Combustible</span><div class="bar-track"><div class="bar-fill amber" style="width:23%"></div></div><span class="bar-count">11</span></div>
-              <div class="bar-row"><span class="bar-label">Quilometratge</span><div class="bar-track"><div class="bar-fill green" style="width:10%"></div></div><span class="bar-count">5</span></div>
-              <div class="bar-row"><span class="bar-label">Allotjament</span><div class="bar-track"><div class="bar-fill purple" style="width:4%"></div></div><span class="bar-count">2</span></div>
+              <div class="bar-row"><span class="bar-label">Restaurant</span><div class="bar-track"><div class="bar-fill blue" style="width:58%"></div></div><span class="bar-count">27</span></div>
+              <div class="bar-row"><span class="bar-label">Combustible</span><div class="bar-track"><div class="bar-fill amber" style="width:21%"></div></div><span class="bar-count">10</span></div>
+              <div class="bar-row"><span class="bar-label">Quilometratge</span><div class="bar-track"><div class="bar-fill green" style="width:13%"></div></div><span class="bar-count">6</span></div>
+              <div class="bar-row"><span class="bar-label">Esdeveniments</span><div class="bar-track"><div class="bar-fill purple" style="width:8%"></div></div><span class="bar-count">4</span></div>
             </div>
           </div>
           <div class="card">
             <div class="card-header"><span class="card-title">Alertes actives</span></div>
             <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
               <div class="alert-banner danger"><i class="ti ti-copy"></i>Tiquet duplicat detectat · Marc Esteve</div>
+              <div class="alert-banner danger"><i class="ti ti-map-pin"></i>Despesa a la seu social (Girona) · J. Torrent</div>
               <div class="alert-banner warning"><i class="ti ti-calendar-x"></i>Despesa en dia festiu · Sara Puig</div>
-              <div class="alert-banner warning"><i class="ti ti-clock"></i>Tiquet registrat 10 dies tard · J. Mora</div>
+              <div class="alert-banner warning"><i class="ti ti-wand"></i>OCR confiança baixa · A. Ferrer</div>
             </div>
           </div>
         </div>
@@ -113,12 +119,12 @@
           </div>
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Import</th><th>Liquidat</th><th>Estat</th></tr></thead>
+              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Sol·licitat</th><th>Atorgat</th><th>Liquidat</th><th>Estat</th></tr></thead>
               <tbody>
-                <tr><td><span class="av blue">ME</span>Marc Esteve</td><td><span class="pill blue">Restaurant</span></td><td>La Pepita SL</td><td>07/05</td><td>42,50 €</td><td>38,00 €</td><td><span class="pill green">OK</span></td></tr>
-                <tr><td><span class="av amber">SP</span>Sara Puig</td><td><span class="pill amber">Combustible</span></td><td>Repsol BCN</td><td>01/05</td><td>55,00 €</td><td>—</td><td><span class="pill amber">Alerta</span></td></tr>
-                <tr><td><span class="av green">JM</span>Joan Mora</td><td><span class="pill blue">Restaurant</span></td><td>El Racó</td><td>28/04</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill amber">Alerta</span></td></tr>
-                <tr><td><span class="av purple">NV</span>Núria Vidal</td><td><span class="pill gray">Allotjament</span></td><td>NH Madrid</td><td>25/04</td><td>95,00 €</td><td>90,00 €</td><td><span class="pill green">OK</span></td></tr>
+                <tr><td><span class="av blue">ME</span>Marc Esteve</td><td><span class="pill blue">Restaurant</span></td><td>La Pepita SL</td><td>07/05</td><td>42,50 €</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill green">OK</span></td></tr>
+                <tr class="row-warning"><td><span class="av amber">SP</span>Sara Puig</td><td><span class="pill amber">Combustible</span></td><td>Repsol BCN</td><td>01/05</td><td>55,00 €</td><td>—</td><td>—</td><td><span class="pill amber">Alerta</span></td></tr>
+                <tr><td><span class="av green">JM</span>Joan Mora</td><td><span class="pill blue">Restaurant</span></td><td>El Racó</td><td>28/04</td><td>38,00 €</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill amber">Alerta</span></td></tr>
+                <tr><td><span class="av purple">NV</span>Núria Vidal</td><td><span class="pill gray">Allotjament</span></td><td>NH Madrid</td><td>25/04</td><td>95,00 €</td><td>90,00 €</td><td>90,00 €</td><td><span class="pill green">OK</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -130,18 +136,19 @@
         <div class="toolbar">
           <input type="text" placeholder="Cerca per nom o departament...">
           <select><option>Tots els departaments</option><option>Vendes</option><option>Operacions</option><option>Tècnic</option></select>
+          <span style="font-size:11px;color:#9B9B99;margin-left:4px">247 actius · API RRHH</span>
           <button class="btn primary" style="margin-left:auto"><i class="ti ti-plus"></i>Nou empleat</button>
         </div>
         <div class="card">
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Empleat</th><th>Departament</th><th>Conveni</th><th>Despeses mes</th><th>Total liquidar</th><th>Estat</th><th></th></tr></thead>
+              <thead><tr><th>Empleat</th><th>Centre</th><th>Conveni</th><th>Regles override</th><th>Despeses mes</th><th>Total liquidar</th><th>Estat</th><th></th></tr></thead>
               <tbody>
-                <tr><td><span class="av blue">ME</span>Marc Esteve</td><td>Vendes</td><td>Metal·lúrgic Cat.</td><td>4</td><td>136,20 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
-                <tr><td><span class="av amber">SP</span>Sara Puig</td><td>Operacions</td><td>Metal·lúrgic Cat.</td><td>2</td><td>55,00 €</td><td><span class="pill amber">Alerta</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
-                <tr><td><span class="av green">JM</span>Joan Mora</td><td>Tècnic</td><td>Metal·lúrgic Cat.</td><td>6</td><td>210,40 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
-                <tr><td><span class="av purple">NV</span>Núria Vidal</td><td>Vendes</td><td>Metal·lúrgic Cat.</td><td>3</td><td>180,00 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
-                <tr><td><span class="av red">RA</span>Roger Alòs</td><td>Operacions</td><td>Metal·lúrgic Cat.</td><td>0</td><td>—</td><td><span class="pill gray">Inactiu</span></td><td><button class="btn sm">Veure</button></td></tr>
+                <tr><td><span class="av blue">ME</span>Marc Esteve</td><td>Seu Girona</td><td>Metal·lúrgic Cat.</td><td><span class="pill purple">1 override</span></td><td>4</td><td>136,20 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
+                <tr><td><span class="av amber">SP</span>Sara Puig</td><td>Delegació Vic</td><td>Metal·lúrgic Cat.</td><td>—</td><td>2</td><td>55,00 €</td><td><span class="pill amber">Alerta</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
+                <tr><td><span class="av green">JM</span>Joan Mora</td><td>Seu Girona</td><td>Metal·lúrgic Cat.</td><td>—</td><td>6</td><td>210,40 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
+                <tr><td><span class="av purple">NV</span>Núria Vidal</td><td>Magatzem Olot</td><td>Metal·lúrgic Cat.</td><td>—</td><td>3</td><td>180,00 €</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm" onclick="goTo('employee-detail')">Veure</button></td></tr>
+                <tr><td><span class="av red">RA</span>Roger Alòs</td><td>Seu Girona</td><td>Metal·lúrgic Cat.</td><td>—</td><td>0</td><td>—</td><td><span class="pill gray">Inactiu</span></td><td><button class="btn sm">Veure</button></td></tr>
               </tbody>
             </table>
           </div>
@@ -159,30 +166,36 @@
           <div class="av lg blue">ME</div>
           <div style="flex:1">
             <div class="emp-name">Marc Esteve García</div>
-            <div class="emp-meta">Comercial · Dept. Vendes · <span class="mono">EMP-00482</span></div>
+            <div class="emp-meta">Comercial · Dept. Vendes · <span class="mono">EMP-00482</span> · Seu Girona</div>
           </div>
           <span class="pill green" style="margin-right:8px">Actiu</span>
           <button class="btn"><i class="ti ti-edit"></i>Editar perfil</button>
           <button class="btn primary" style="margin-left:6px"><i class="ti ti-table-export"></i>Exportar .xlsx</button>
         </div>
         <div class="stats-row two" style="margin-bottom:14px">
-          <div class="stat"><div class="stat-label">Total presentat (mes)</div><div class="stat-val">136,20 €</div></div>
-          <div class="stat"><div class="stat-label">Total a liquidar</div><div class="stat-val success-text">122,00 €</div></div>
+          <div class="stat"><div class="stat-label">Total sol·licitat (mes)</div><div class="stat-val">152,70 €</div></div>
+          <div class="stat"><div class="stat-label">Total liquidat</div><div class="stat-val success-text">136,00 €</div></div>
         </div>
-        <div class="card" style="margin-bottom:14px">
-          <div class="card-header"><span class="card-title">Dades corporatives</span><span class="card-note">Gestionades per RRHH</span></div>
-          <div class="card-body">
-            <div class="two-col-sm">
+        <div class="two-col" style="margin-bottom:14px">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Dades corporatives</span><span class="card-note">Via API RRHH</span></div>
+            <div class="card-body">
               <div class="dl">
                 <div class="dl-row"><span class="dl-k">Conveni</span><span class="dl-v">Metal·lúrgic Català</span></div>
-                <div class="dl-row"><span class="dl-k">Centre de cost</span><span class="dl-v mono">CC-042</span></div>
+                <div class="dl-row"><span class="dl-k">Centre treball</span><span class="dl-v">Seu Girona</span></div>
                 <div class="dl-row"><span class="dl-k">Email corp.</span><span class="dl-v link">m.esteve@empresa.cat</span></div>
-              </div>
-              <div class="dl">
                 <div class="dl-row"><span class="dl-k">Rol al sistema</span><span class="dl-v">Empleat</span></div>
                 <div class="dl-row"><span class="dl-k">Alta al sistema</span><span class="dl-v">12/01/2024</span></div>
-                <div class="dl-row"><span class="dl-k">Darrera activitat</span><span class="dl-v">07/05/2026</span></div>
               </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">Regles de conveni</span><span class="card-note">1 override actiu</span></div>
+            <div class="card-body">
+              <div class="rule-row"><span class="rule-key">Dieta allotjament màx.</span><span class="rule-val" style="color:#7C3AED">110,00 € <span class="mono">(override)</span></span></div>
+              <div class="rule-row"><span class="rule-key">Dieta restaurant màx.</span><span class="rule-val">38,00 €</span></div>
+              <div class="rule-row"><span class="rule-key">Tarifa quilometratge</span><span class="rule-val">0,20 €/km</span></div>
+              <div class="rule-row" style="border:none"><span class="rule-key">Àpat comercial mínim</span><span class="rule-val">50,00 €</span></div>
             </div>
           </div>
         </div>
@@ -190,12 +203,12 @@
           <div class="card-header"><span class="card-title">Despeses del mes</span></div>
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Import</th><th>Liquidat</th><th>Estat</th></tr></thead>
+              <thead><tr><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Sol·licitat</th><th>Atorgat</th><th>Liquidat</th><th>Estat</th></tr></thead>
               <tbody>
-                <tr><td><span class="pill blue">Restaurant</span></td><td>La Pepita SL</td><td>07/05</td><td>42,50 €</td><td>38,00 €</td><td><span class="pill green">OK</span></td></tr>
-                <tr><td><span class="pill amber">Combustible</span></td><td>Repsol BCN</td><td>04/05</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill amber">Alerta</span></td></tr>
-                <tr><td><span class="pill gray">KM</span></td><td>Desplaç. propi</td><td>02/05</td><td>18,20 €</td><td>18,20 €</td><td><span class="pill green">OK</span></td></tr>
-                <tr><td><span class="pill blue">Restaurant</span></td><td>Bar Nou</td><td>28/04</td><td>37,50 €</td><td>27,80 €</td><td><span class="pill green">OK</span></td></tr>
+                <tr><td><span class="pill blue">Restaurant</span></td><td>La Pepita SL</td><td>07/05</td><td>42,50 €</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill green">OK</span></td></tr>
+                <tr><td><span class="pill amber">Combustible</span></td><td>Repsol BCN</td><td>04/05</td><td>38,00 €</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill amber">Alerta</span></td></tr>
+                <tr><td><span class="pill gray">KM</span></td><td>Desplaç. propi</td><td>02/05</td><td>18,20 €</td><td>18,20 €</td><td>18,20 €</td><td><span class="pill green">OK</span></td></tr>
+                <tr><td><span class="pill blue">Restaurant</span></td><td>Bar Nou</td><td>28/04</td><td>54,00 €</td><td>38,00 €</td><td>38,00 €</td><td><span class="pill green">OK</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -206,28 +219,120 @@
       <section class="screen" id="screen-expenses">
         <div class="toolbar" style="flex-wrap:wrap">
           <input type="text" placeholder="Cerca proveïdor, empleat...">
-          <select><option>Tots els tipus</option><option>Restaurant</option><option>Combustible</option><option>KM</option><option>Allotjament</option></select>
-          <select><option>Tots els estats</option><option>OK</option><option>Alerta</option><option>Duplicat</option></select>
+          <select><option>Tots els tipus</option><option>Restaurant</option><option>Combustible</option><option>KM</option><option>Allotjament</option><option>Esdeveniments</option></select>
+          <select><option>Tots els estats</option><option>OK</option><option>Alerta</option><option>Duplicat</option><option>Bloquejat</option></select>
           <select><option>Maig 2026</option><option>Abril 2026</option></select>
         </div>
         <div class="filter-pills" style="margin-bottom:12px">
           <span class="pill gray active-filter">Tots (47)</span>
-          <span class="pill green">OK (44)</span>
-          <span class="pill amber">Alerta (2)</span>
-          <span class="pill red">Duplicat (1)</span>
+          <span class="pill green">OK (32)</span>
+          <span class="pill amber">Pendent (12)</span>
+          <span class="pill red">Bloquejat (3)</span>
         </div>
         <div class="card">
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Import</th><th>Liquidat</th><th>Alerta</th><th>Estat</th></tr></thead>
+              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Sol·l. / Atorg. / Liq.</th><th>OCR</th><th>Cert.</th><th>Alerta</th><th>Estat</th></tr></thead>
               <tbody>
-                <tr class="row-danger"><td><span class="av blue">ME</span>Marc Esteve</td><td><span class="pill blue">Restaurant</span></td><td>Repsol BCN</td><td>04/05</td><td>38,00 €</td><td>—</td><td class="alert-cell danger"><i class="ti ti-copy"></i> Duplicat</td><td><span class="pill red">Bloquejat</span></td></tr>
-                <tr class="row-warning"><td><span class="av amber">SP</span>Sara Puig</td><td><span class="pill amber">Combustible</span></td><td>Repsol BCN</td><td>01/05</td><td>55,00 €</td><td>—</td><td class="alert-cell warning"><i class="ti ti-calendar-x"></i> Festiu</td><td><span class="pill amber">Revisió</span></td></tr>
-                <tr class="row-warning"><td><span class="av green">JM</span>Joan Mora</td><td><span class="pill blue">Restaurant</span></td><td>El Racó</td><td>28/04</td><td>38,00 €</td><td>38,00 €</td><td class="alert-cell warning"><i class="ti ti-clock"></i> +10 dies</td><td><span class="pill amber">Revisió</span></td></tr>
-                <tr><td><span class="av blue">ME</span>Marc Esteve</td><td><span class="pill blue">Restaurant</span></td><td>La Pepita SL</td><td>07/05</td><td>42,50 €</td><td>38,00 €</td><td>—</td><td><span class="pill green">OK</span></td></tr>
-                <tr><td><span class="av purple">NV</span>Núria Vidal</td><td><span class="pill gray">Allotjament</span></td><td>NH Madrid</td><td>25/04</td><td>95,00 €</td><td>90,00 €</td><td>—</td><td><span class="pill green">OK</span></td></tr>
+                <tr class="row-danger">
+                  <td><span class="av blue">ME</span>Marc Esteve</td>
+                  <td><span class="pill blue">Restaurant</span></td>
+                  <td>Repsol BCN</td><td>04/05</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">38,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-blq">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-blq">Bloq.</span></div></div></td>
+                  <td><span class="ocr-conf high">98%</span></td>
+                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td class="alert-cell danger"><i class="ti ti-copy"></i> Duplicat</td>
+                  <td><span class="pill red">Bloquejat</span></td>
+                </tr>
+                <tr class="row-danger">
+                  <td><span class="av green">JT</span>Joan Torrent</td>
+                  <td><span class="pill gray">Allotjament</span></td>
+                  <td>Hotel Nord · Girona</td><td>16/05</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">98,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-blq">0,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-blq">Bloq.</span></div></div></td>
+                  <td><span class="ocr-conf high">91%</span></td>
+                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td class="alert-cell danger"><i class="ti ti-map-pin"></i> Seu social</td>
+                  <td><span class="pill red">Bloquejat</span></td>
+                </tr>
+                <tr class="row-warning">
+                  <td><span class="av amber">SP</span>Sara Puig</td>
+                  <td><span class="pill amber">Combustible</span></td>
+                  <td>Repsol BCN</td><td>01/05</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">55,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-apr">—</span></div></div></td>
+                  <td><span class="ocr-conf none">—</span></td>
+                  <td>—</td>
+                  <td class="alert-cell warning"><i class="ti ti-calendar-x"></i> Festiu</td>
+                  <td><span class="pill amber">Revisió</span></td>
+                </tr>
+                <tr class="row-warning">
+                  <td><span class="av purple">AF</span>Ana Ferrer</td>
+                  <td><span class="pill purple">Esdeveniments</span></td>
+                  <td>Fira de Lleida 2026</td><td>15/05</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">67,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-apr">—</span></div></div></td>
+                  <td><span class="ocr-conf low">62%</span></td>
+                  <td>—</td>
+                  <td class="alert-cell warning"><i class="ti ti-wand"></i> OCR baix</td>
+                  <td><span class="pill amber">Revisió</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av blue">ME</span>Marc Esteve</td>
+                  <td><span class="pill blue">Restaurant</span></td>
+                  <td>La Pepita SL</td><td>07/05</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">42,50 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">38,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-liq">38,00 €</span></div></div></td>
+                  <td><span class="ocr-conf high">96%</span></td>
+                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av purple">NV</span>Núria Vidal</td>
+                  <td><span class="pill gray">Allotjament</span></td>
+                  <td>NH Madrid</td><td>25/04</td>
+                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">95,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">90,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-liq">90,00 €</span></div></div></td>
+                  <td><span class="ocr-conf high">94%</span></td>
+                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== VALIDADORS ========== -->
+      <section class="screen" id="screen-validadors">
+        <div class="card" style="margin-bottom:14px">
+          <div class="card-header">
+            <span class="card-title">Gestió de Validadors <span class="new-badge">NOU</span></span>
+            <span class="card-note">1 validador màxim per centre · recuperats via API RRHH</span>
+            <button class="btn primary" style="margin-left:auto"><i class="ti ti-plus"></i>Nou validador</button>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Validador</th><th>Centre de treball</th><th>Email</th><th>Notificacions</th><th>Pendents</th><th>Estat</th><th></th></tr></thead>
+              <tbody>
+                <tr><td><span class="av blue">MD</span>Marta Domènech</td><td>Seu Girona</td><td class="muted-text">m.domenech@empresa.cat</td><td><span class="pill green"><i class="ti ti-bell"></i> Actives</span></td><td>8</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm">Editar</button></td></tr>
+                <tr><td><span class="av amber">RS</span>Ricard Sala</td><td>Delegació Vic</td><td class="muted-text">r.sala@empresa.cat</td><td><span class="pill green"><i class="ti ti-bell"></i> Actives</span></td><td>3</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm">Editar</button></td></tr>
+                <tr><td><span class="av purple">JP</span>Joana Pla</td><td>Magatzem Olot</td><td class="muted-text">j.pla@empresa.cat</td><td><span class="pill gray"><i class="ti ti-bell-off"></i> Silent</span></td><td>1</td><td><span class="pill green">Actiu</span></td><td><button class="btn sm">Editar</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">Accions disponibles per als validadors</span></div>
+          <div class="card-body">
+            <div class="two-col">
+              <div>
+                <div class="rule-row"><span class="rule-key"><i class="ti ti-circle-check" style="color:#059669"></i> Acceptar despesa íntegrament</span><span class="pill green">Activat</span></div>
+                <div class="rule-row"><span class="rule-key"><i class="ti ti-circle-x" style="color:#DC2626"></i> Rebutjar despesa</span><span class="pill green">Activat</span></div>
+              </div>
+              <div>
+                <div class="rule-row"><span class="rule-key"><i class="ti ti-pencil" style="color:#D97706"></i> Modificar import atorgat</span><span class="pill green">Activat</span></div>
+                <div class="rule-row"><span class="rule-key"><i class="ti ti-trending-up" style="color:#3730A3"></i> Sobreescriure topall suggerit</span><span class="pill green">Activat</span></div>
+              </div>
+            </div>
+            <div class="alert-banner warning" style="margin-top:10px"><i class="ti ti-info-circle"></i>El validador pot aprovar íntegre encara que el sistema suggereixi un import inferior (topall superat).</div>
           </div>
         </div>
       </section>
@@ -237,12 +342,16 @@
         <div class="two-col">
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="card">
-              <div class="card-header"><span class="card-title"><i class="ti ti-map-pin"></i> Topalls per tipus de despesa</span></div>
+              <div class="card-header">
+                <span class="card-title"><i class="ti ti-map-pin"></i> Topalls per tipus · globals</span>
+                <span class="card-note">Font: API RRHH</span>
+              </div>
               <div class="card-body">
                 <div class="rule-row"><span class="rule-key">Restaurant (àrea urbana)</span><span class="rule-val">38,00 €</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
                 <div class="rule-row"><span class="rule-key">Restaurant (fora urbà)</span><span class="rule-val">55,00 €</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
                 <div class="rule-row"><span class="rule-key">Allotjament</span><span class="rule-val">90,00 €</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
-                <div class="rule-row" style="border:none"><span class="rule-key">Aparcament / peatge</span><span class="rule-val muted-text">sense topall</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
+                <div class="rule-row"><span class="rule-key">Aparcament / peatge</span><span class="rule-val muted-text">sense topall</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
+                <div class="rule-row" style="border:none"><span class="rule-key">Àpat comercial obligatori si</span><span class="rule-val">&gt; 50,00 €</span><button class="btn sm"><i class="ti ti-edit"></i></button></div>
               </div>
             </div>
             <div class="card">
@@ -250,11 +359,41 @@
               <div class="card-body">
                 <div class="form-row"><label>Preu per km</label><input type="number" value="0.20" style="max-width:80px"> <span class="unit">€/km</span></div>
                 <div class="form-row"><label>Distància mínima</label><input type="number" value="10" style="max-width:80px"> <span class="unit">km</span></div>
-                <div class="form-row"><label>Vehicle propi</label><div class="toggle on" onclick="this.classList.toggle('on')"><div class="thumb"></div></div><span class="unit">Requerit</span></div>
+                <div class="form-row"><label>Càlcul automàtic</label><div class="toggle on" onclick="this.classList.toggle('on')"><div class="thumb"></div></div><span class="unit">Origen → Destí</span></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title"><i class="ti ti-shield-half"></i> Restricció seu social <span class="new-badge">NOU</span></span>
+              </div>
+              <div class="card-body">
+                <div class="form-row"><label>Seu social</label><input type="text" value="Girona" style="max-width:140px"></div>
+                <div class="form-row"><label>Àmbit restricció</label>
+                  <select style="max-width:180px">
+                    <option>Municipi (Girona)</option>
+                    <option>Codi postal</option>
+                    <option>Província</option>
+                  </select>
+                </div>
+                <div class="fiscal-block"><i class="ti ti-ban"></i>Les despeses a Girona seran bloquejades automàticament (motiu fiscal).</div>
               </div>
             </div>
           </div>
           <div style="display:flex;flex-direction:column;gap:14px">
+            <div class="card">
+              <div class="card-header">
+                <span class="card-title"><i class="ti ti-user-cog"></i> Override per treballador <span class="new-badge">NOU</span></span>
+              </div>
+              <div class="card-body">
+                <div class="form-row" style="margin-bottom:12px"><label>Treballador</label>
+                  <select><option>Marc Esteve</option><option>Sara Puig</option><option>Joan Mora</option></select>
+                </div>
+                <div class="rule-row"><span class="rule-key">Dieta allotjament màx.</span><span class="rule-val" style="color:#7C3AED">110,00 € <span style="font-size:10px">(override)</span></span><div class="toggle on" onclick="this.classList.toggle('on')"><div class="thumb"></div></div></div>
+                <div class="rule-row"><span class="rule-key">Dieta restaurant màx.</span><span class="rule-val muted-text">38,00 € (global)</span><div class="toggle" onclick="this.classList.toggle('on')"><div class="thumb"></div></div></div>
+                <div class="rule-row" style="border:none"><span class="rule-key">Tarifa quilometratge</span><span class="rule-val muted-text">0,20 €/km (global)</span><div class="toggle" onclick="this.classList.toggle('on')"><div class="thumb"></div></div></div>
+                <div class="alert-banner warning" style="margin-top:10px"><i class="ti ti-info-circle"></i>Overrides individuals prevalen sobre les regles globals de conveni.</div>
+              </div>
+            </div>
             <div class="card">
               <div class="card-header"><span class="card-title"><i class="ti ti-users"></i> Àpats comercials</span></div>
               <div class="card-body">
@@ -275,6 +414,70 @@
         <div style="display:flex;justify-content:flex-end;margin-top:14px;gap:8px">
           <button class="btn">Cancel·lar canvis</button>
           <button class="btn primary"><i class="ti ti-check"></i>Desar configuració</button>
+        </div>
+      </section>
+
+      <!-- ========== CATEGORIES ========== -->
+      <section class="screen" id="screen-categories">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Categories de despesa <span class="new-badge">NOU</span></span>
+            <button class="btn primary" style="margin-left:auto"><i class="ti ti-plus"></i>Nova categoria</button>
+          </div>
+          <div class="card-body">
+            <div class="cat-grid">
+              <div class="cat-card">
+                <div class="cat-emoji">🍽️</div>
+                <div class="cat-name">Restaurant</div>
+                <div class="cat-note">Àpats laborals i comercials</div>
+                <div class="cat-req">Comensals obligatoris si &gt;50€</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">⛽</div>
+                <div class="cat-name">Combustible</div>
+                <div class="cat-note">Repostatge vehicle propi</div>
+                <div class="cat-req">Exclòs caps de setmana</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">🛣️</div>
+                <div class="cat-name">Quilometratge</div>
+                <div class="cat-note">Vehicle propi</div>
+                <div class="cat-req">Origen / Destí → km automàtics</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">🅿️</div>
+                <div class="cat-name">Aparcament</div>
+                <div class="cat-note">Pàrquings i zones blaves</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">🛏️</div>
+                <div class="cat-name">Allotjament</div>
+                <div class="cat-note">Hotels i pernoctació laboral</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">🚌</div>
+                <div class="cat-name">Transport</div>
+                <div class="cat-note">Transport públic i taxis</div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">🛣️</div>
+                <div class="cat-name">Peatge</div>
+                <div class="cat-note">Autopistes i vies de peatge</div>
+              </div>
+              <div class="cat-card new-cat">
+                <div class="cat-emoji">🎪</div>
+                <div class="cat-name" style="color:#5B21B6">Esdeveniments / Fires <span class="new-badge">NOU</span></div>
+                <div class="cat-note">Assistència a fires i esdeveniments</div>
+                <div class="cat-req">Camp obligatori: nom de la fira</div>
+                <div style="margin-top:8px"><input type="text" placeholder="Ex: Fira de Lleida 2026" style="font-size:11px;height:28px;border-color:#A78BFA"></div>
+              </div>
+              <div class="cat-card">
+                <div class="cat-emoji">📋</div>
+                <div class="cat-name">Altres</div>
+                <div class="cat-note">Despeses no categoritzades</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -305,12 +508,15 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:14px">
             <div class="card">
-              <div class="card-header"><span class="card-title">Festius configurats</span></div>
+              <div class="card-header">
+                <span class="card-title">Festius configurats</span>
+                <span class="card-note">Via API RRHH</span>
+              </div>
               <div class="card-body" style="display:flex;flex-direction:column;gap:8px">
                 <div class="holiday-row"><span>17 Maig · Sant Ponç</span><button class="btn sm icon-btn"><i class="ti ti-x"></i></button></div>
                 <div class="holiday-row"><span>24 Jun · Sant Joan</span><button class="btn sm icon-btn"><i class="ti ti-x"></i></button></div>
                 <div class="holiday-row"><span>15 Ago · Assumpció</span><button class="btn sm icon-btn"><i class="ti ti-x"></i></button></div>
-                <button class="btn" style="width:100%"><i class="ti ti-plus"></i>Afegir festiu</button>
+                <button class="btn" style="width:100%"><i class="ti ti-plus"></i>Afegir festiu manual</button>
               </div>
             </div>
             <div class="card">
@@ -326,11 +532,136 @@
         </div>
       </section>
 
+      <!-- ========== INTEGRACIÓ RRHH ========== -->
+      <section class="screen" id="screen-integracio">
+        <div class="two-col" style="margin-bottom:14px">
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="int-card">
+              <div class="int-icon"><i class="ti ti-users"></i></div>
+              <div class="int-info">
+                <div class="int-name">Treballadors</div>
+                <div class="int-desc">Registre i actualització d'empleats</div>
+                <div class="int-status"><div class="int-dot ok"></div><span style="color:#059669">247 actius · avui 08:15</span></div>
+              </div>
+              <span class="mono">247</span>
+            </div>
+            <div class="int-card">
+              <div class="int-icon"><i class="ti ti-building"></i></div>
+              <div class="int-info">
+                <div class="int-name">Centres de treball</div>
+                <div class="int-desc">1 validador màxim per centre</div>
+                <div class="int-status"><div class="int-dot ok"></div><span style="color:#059669">8 centres · avui 08:15</span></div>
+              </div>
+              <span class="mono">8</span>
+            </div>
+            <div class="int-card">
+              <div class="int-icon"><i class="ti ti-file-text"></i></div>
+              <div class="int-info">
+                <div class="int-name">Regles de conveni</div>
+                <div class="int-desc">Sobreescrivibles per treballador</div>
+                <div class="int-status"><div class="int-dot ok"></div><span style="color:#059669">5 convenis · avui 08:15</span></div>
+              </div>
+              <span class="mono">5</span>
+            </div>
+            <div class="int-card">
+              <div class="int-icon"><i class="ti ti-calendar-event"></i></div>
+              <div class="int-info">
+                <div class="int-name">Calendaris i absències</div>
+                <div class="int-desc">Vacances i absències per validació</div>
+                <div class="int-status"><div class="int-dot ok"></div><span style="color:#059669">Any 2026 · avui 08:15</span></div>
+              </div>
+              <span class="mono">365</span>
+            </div>
+            <div class="int-card">
+              <div class="int-icon"><i class="ti ti-user-minus"></i></div>
+              <div class="int-info">
+                <div class="int-name">Desactivació automàtica</div>
+                <div class="int-desc">Empleats que deixen l'empresa</div>
+                <div class="int-status"><div class="int-dot ok"></div><span style="color:#059669">2 desactivats aquest mes</span></div>
+              </div>
+              <span class="mono">2</span>
+            </div>
+          </div>
+          <div class="card" style="margin-bottom:0">
+            <div class="card-header"><span class="card-title">Configuració API</span></div>
+            <div class="card-body">
+              <div class="form-row"><label>URL Endpoint</label><input type="text" value="https://api.rrhh.empresa.cat/v1"></div>
+              <div class="form-row"><label>Freqüència</label>
+                <select><option>Diàriament (08:00)</option><option>Cada 6h</option><option>Manual</option></select>
+              </div>
+              <div class="form-row"><label>API Key</label><input type="password" value="••••••••••••••••"></div>
+              <div style="margin-top:12px;display:flex;justify-content:flex-end;gap:8px">
+                <button class="btn sm"><i class="ti ti-refresh"></i>Sync manual</button>
+                <button class="btn sm primary"><i class="ti ti-device-floppy"></i>Desar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== OCR / IA ========== -->
+      <section class="screen" id="screen-ocr">
+        <div class="two-col" style="margin-bottom:14px">
+          <div class="card">
+            <div class="card-header"><span class="card-title">Motor OCR + IA <span class="new-badge">NOU</span></span></div>
+            <div class="card-body">
+              <div class="rule-row"><span class="rule-key">Classificació automàtica de categories</span><div class="toggle on" onclick="this.classList.toggle('on')"><div class="thumb"></div></div></div>
+              <div class="rule-row"><span class="rule-key">Confirmació si confiança baixa</span><div class="toggle on" onclick="this.classList.toggle('on')"><div class="thumb"></div></div></div>
+              <div class="rule-row" style="border:none"><span class="rule-key">Llindar de confiança mínima</span>
+                <div style="display:flex;align-items:center;gap:8px">
+                  <input type="range" min="50" max="95" value="70" style="width:90px;height:4px" oninput="document.getElementById('conf-out').textContent=this.value+'%'">
+                  <span class="mono" id="conf-out">70%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">Estadístiques OCR (mes)</span></div>
+            <div class="card-body">
+              <div class="stats-row two" style="margin-bottom:0">
+                <div class="stat"><div class="stat-label">Precisió classificació</div><div class="stat-val success-text">94,2%</div></div>
+                <div class="stat"><div class="stat-label">Rev. manual pendents</div><div class="stat-val">4</div></div>
+              </div>
+              <div class="stats-row two" style="margin-top:10px;margin-bottom:0">
+                <div class="stat"><div class="stat-label">Tiquets processats</div><div class="stat-val">218</div></div>
+                <div class="stat"><div class="stat-label">Auto-classificats</div><div class="stat-val success-text">214</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Registre certificat de tiquets <span class="new-badge">NOU</span></span>
+            <span class="card-note">Pendent definir solució tècnica/legal</span>
+            <span class="pill amber" style="margin-left:auto">En estudi</span>
+          </div>
+          <div class="card-body">
+            <div class="two-col" style="gap:10px">
+              <div style="padding:12px;border:1px solid #E5E5E3;border-radius:8px;opacity:.5">
+                <div style="font-size:12px;font-weight:500;margin-bottom:4px">Factura Electrònica (FE)</div>
+                <div style="font-size:11px;color:#9B9B99">Mecanisme homologat per Hisenda</div>
+                <div style="margin-top:8px"><span class="pill amber">A valorar</span></div>
+              </div>
+              <div style="padding:12px;border:2px solid #3730A3;border-radius:8px;background:#EEF2FF">
+                <div style="font-size:12px;font-weight:500;margin-bottom:4px;color:#3730A3">Hash + Timestamp certificat</div>
+                <div style="font-size:11px;color:#4338CA">Segell de temps amb certificat digital sobre imatge original</div>
+                <div style="margin-top:8px"><span class="pill blue">Opció recomanada</span></div>
+              </div>
+              <div style="padding:12px;border:1px solid #E5E5E3;border-radius:8px;opacity:.5">
+                <div style="font-size:12px;font-weight:500;margin-bottom:4px">Custòdia documental</div>
+                <div style="font-size:11px;color:#9B9B99">Servei extern de custòdia legal</div>
+                <div style="margin-top:8px"><span class="pill amber">A valorar</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ========== AUDITORIA ========== -->
       <section class="screen" id="screen-audit">
         <div class="toolbar">
           <input type="text" placeholder="Cerca usuari o acció...">
-          <select><option>Totes les accions</option><option>Crear despesa</option><option>Modificar empleat</option><option>Exportar informe</option><option>Login</option></select>
+          <select><option>Totes les accions</option><option>Crear despesa</option><option>Modificar empleat</option><option>Exportar informe</option><option>Sync RRHH</option><option>Bloqueig fiscal</option></select>
           <input type="date" style="max-width:140px">
           <input type="date" style="max-width:140px">
         </div>
@@ -340,12 +671,13 @@
             <span class="card-note">Immutable · Append-only</span>
           </div>
           <div class="card-body audit-list">
-            <div class="audit-row"><div class="adt-dot danger"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_BLOCKED</strong> · Marc Esteve → Repsol BCN 38 €</div><div class="adt-meta">Motiu: tiquet duplicat detectat (hash coincident)</div></div><div class="adt-time">12/05 · 10:42</div></div>
-            <div class="audit-row"><div class="adt-dot warning"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_ALERT</strong> · Sara Puig → Combustible 55 €</div><div class="adt-meta">Alerta: dia 01/05 és festiu al calendari laboral</div></div><div class="adt-time">12/05 · 09:17</div></div>
-            <div class="audit-row"><div class="adt-dot success"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_CREATED</strong> · Marc Esteve → Restaurant La Pepita 42,50 €</div><div class="adt-meta">Liquidació calculada: 38,00 € (topall conveni aplicat)</div></div><div class="adt-time">11/05 · 18:03</div></div>
+            <div class="audit-row"><div class="adt-dot danger"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_BLOCKED</strong> · Joan Torrent → Hotel Nord Girona 98 €</div><div class="adt-meta">Motiu: localitat coincident amb seu social (regla fiscal)</div></div><div class="adt-time">19/05 · 13:45</div></div>
+            <div class="audit-row"><div class="adt-dot danger"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_BLOCKED</strong> · Marc Esteve → Repsol BCN 38 €</div><div class="adt-meta">Motiu: tiquet duplicat detectat (hash coincident)</div></div><div class="adt-time">19/05 · 10:42</div></div>
+            <div class="audit-row"><div class="adt-dot warning"></div><div class="adt-main"><div class="adt-action"><strong>EXPENSE_ALERT</strong> · Sara Puig → Combustible 55 €</div><div class="adt-meta">Alerta: dia 01/05 és festiu al calendari laboral</div></div><div class="adt-time">19/05 · 09:17</div></div>
+            <div class="audit-row"><div class="adt-dot success"></div><div class="adt-main"><div class="adt-action"><strong>SYNC_RRHH</strong> · Sistema → API batch completat</div><div class="adt-meta">247 treballadors · 8 centres · 5 convenis · 2 desactivats</div></div><div class="adt-time">19/05 · 08:15</div></div>
+            <div class="audit-row"><div class="adt-dot info"></div><div class="adt-main"><div class="adt-action"><strong>VALIDATOR_OVERRIDE</strong> · Marta Domènech → Despesa #1241</div><div class="adt-meta">Topall superat aprovat: 78,00 € (topall 38,00 €)</div></div><div class="adt-time">18/05 · 16:02</div></div>
             <div class="audit-row"><div class="adt-dot info"></div><div class="adt-main"><div class="adt-action"><strong>REPORT_EXPORTED</strong> · Laia Aguilar → Núria Vidal · abril_2026.xlsx</div><div class="adt-meta">12 despeses · 4 alertes incloses</div></div><div class="adt-time">10/05 · 11:30</div></div>
-            <div class="audit-row"><div class="adt-dot muted"></div><div class="adt-main"><div class="adt-action"><strong>RULE_UPDATED</strong> · Laia Aguilar → topall Restaurant àrea urbana</div><div class="adt-meta">Valor anterior: 35,00 € → nou: 38,00 €</div></div><div class="adt-time">08/05 · 09:05</div></div>
-            <div class="audit-row last"><div class="adt-dot muted"></div><div class="adt-main"><div class="adt-action"><strong>EMPLOYEE_DEACTIVATED</strong> · Laia Aguilar → Roger Alòs (EMP-00391)</div><div class="adt-meta">Historial de despeses conservat</div></div><div class="adt-time">07/05 · 16:48</div></div>
+            <div class="audit-row last"><div class="adt-dot muted"></div><div class="adt-main"><div class="adt-action"><strong>RULE_UPDATED</strong> · Laia Aguilar → topall Restaurant àrea urbana</div><div class="adt-meta">Valor anterior: 35,00 € → nou: 38,00 €</div></div><div class="adt-time">08/05 · 09:05</div></div>
           </div>
         </div>
       </section>
@@ -362,9 +694,10 @@
               <div class="export-preview">
                 <div class="export-preview-title">El fitxer inclourà:</div>
                 <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Dades fiscals (NIF proveïdor, IVA)</div>
-                <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Import presentat i import a liquidar</div>
-                <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Alertes (festius, duplicats, retard)</div>
+                <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Import sol·licitat, atorgat i liquidat</div>
+                <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Alertes (festius, duplicats, seu social)</div>
                 <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Comensals (àpats comercials)</div>
+                <div class="export-preview-item"><i class="ti ti-check success-icon"></i>Fira / Esdeveniment associat</div>
               </div>
               <button class="btn primary" style="width:100%;justify-content:center"><i class="ti ti-table-export"></i>Generar .xlsx</button>
             </div>

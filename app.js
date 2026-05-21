@@ -3,8 +3,12 @@ const SCREENS = {
   'employees':        'Empleats',
   'employee-detail':  'Marc Esteve · Fitxa',
   'expenses':         'Despeses',
+  'validadors':       'Validadors',
   'rules':            'Regles de conveni',
   'calendar':         'Calendari laboral',
+  'categories':       'Categories de despesa',
+  'integracio':       'Integració RRHH',
+  'ocr':              'OCR / Intel·ligència Artificial',
   'audit':            'Auditoria',
   'reports':          'Exportació',
 };
