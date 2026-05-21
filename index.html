@@ -32,7 +32,7 @@
 
       <div class="sb-section">Configuració</div>
       <a class="sb-item" data-screen="rules"><i class="ti ti-settings"></i>Regles conveni</a>
-      <a class="sb-item" data-screen="categories"><i class="ti ti-tags"></i>Categories <span class="new-badge">NOU</span></a>
+
       <a class="sb-item" data-screen="calendar"><i class="ti ti-calendar"></i>Calendari laboral</a>
 
       <div class="sb-section">Sistema</div>
@@ -219,79 +219,87 @@
       <section class="screen" id="screen-expenses">
         <div class="toolbar" style="flex-wrap:wrap">
           <input type="text" placeholder="Cerca proveïdor, empleat...">
-          <select><option>Tots els tipus</option><option>Restaurant</option><option>Combustible</option><option>KM</option><option>Allotjament</option><option>Esdeveniments</option></select>
+          <select><option>Tots els tipus</option><option>Restaurant</option><option>Combustible</option><option>Quilometratge</option><option>Allotjament</option><option>Aparcament</option><option>Peatge</option><option>Transport</option><option>Esdeveniments</option><option>Altres</option></select>
           <select><option>Tots els estats</option><option>OK</option><option>Alerta</option><option>Duplicat</option><option>Bloquejat</option></select>
-          <select><option>Maig 2026</option><option>Abril 2026</option></select>
-        </div>
-        <div class="filter-pills" style="margin-bottom:12px">
-          <span class="pill gray active-filter">Tots (47)</span>
-          <span class="pill green">OK (32)</span>
-          <span class="pill amber">Pendent (12)</span>
-          <span class="pill red">Bloquejat (3)</span>
+          <select><option>Maig 2026</option><option>Abril 2026</option><option>Març 2026</option><option>Febrer 2026</option></select>
         </div>
         <div class="card">
           <div class="table-wrap">
             <table>
-              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Sol·l. / Atorg. / Liq.</th><th>OCR</th><th>Cert.</th><th>Alerta</th><th>Estat</th></tr></thead>
+              <thead><tr><th>Empleat</th><th>Tipus</th><th>Proveïdor</th><th>Data</th><th>Import</th><th>Liquidat</th><th>Alerta</th><th>Estat</th></tr></thead>
               <tbody>
                 <tr class="row-danger">
                   <td><span class="av blue">ME</span>Marc Esteve</td>
                   <td><span class="pill blue">Restaurant</span></td>
-                  <td>Repsol BCN</td><td>04/05</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">38,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-blq">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-blq">Bloq.</span></div></div></td>
-                  <td><span class="ocr-conf high">98%</span></td>
-                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td>Repsol BCN</td>
+                  <td>04/05</td><td>38,00 €</td><td>—</td>
                   <td class="alert-cell danger"><i class="ti ti-copy"></i> Duplicat</td>
                   <td><span class="pill red">Bloquejat</span></td>
                 </tr>
                 <tr class="row-danger">
                   <td><span class="av green">JT</span>Joan Torrent</td>
                   <td><span class="pill gray">Allotjament</span></td>
-                  <td>Hotel Nord · Girona</td><td>16/05</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">98,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-blq">0,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-blq">Bloq.</span></div></div></td>
-                  <td><span class="ocr-conf high">91%</span></td>
-                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
+                  <td>Hotel Nord · Girona</td>
+                  <td>16/05</td><td>98,00 €</td><td>—</td>
                   <td class="alert-cell danger"><i class="ti ti-map-pin"></i> Seu social</td>
                   <td><span class="pill red">Bloquejat</span></td>
                 </tr>
                 <tr class="row-warning">
                   <td><span class="av amber">SP</span>Sara Puig</td>
                   <td><span class="pill amber">Combustible</span></td>
-                  <td>Repsol BCN</td><td>01/05</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">55,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-apr">—</span></div></div></td>
-                  <td><span class="ocr-conf none">—</span></td>
-                  <td>—</td>
+                  <td>Repsol BCN</td>
+                  <td>01/05</td><td>55,00 €</td><td>—</td>
                   <td class="alert-cell warning"><i class="ti ti-calendar-x"></i> Festiu</td>
                   <td><span class="pill amber">Revisió</span></td>
                 </tr>
                 <tr class="row-warning">
                   <td><span class="av purple">AF</span>Ana Ferrer</td>
                   <td><span class="pill purple">Esdeveniments</span></td>
-                  <td>Fira de Lleida 2026</td><td>15/05</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">67,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">—</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-apr">—</span></div></div></td>
-                  <td><span class="ocr-conf low">62%</span></td>
-                  <td>—</td>
+                  <td>Fira de Lleida 2026<br><span class="mono" style="color:#9B9B99">Fira: Fira de Lleida 2026</span></td>
+                  <td>15/05</td><td>67,00 €</td><td>—</td>
                   <td class="alert-cell warning"><i class="ti ti-wand"></i> OCR baix</td>
                   <td><span class="pill amber">Revisió</span></td>
                 </tr>
                 <tr>
                   <td><span class="av blue">ME</span>Marc Esteve</td>
                   <td><span class="pill blue">Restaurant</span></td>
-                  <td>La Pepita SL</td><td>07/05</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">42,50 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">38,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-liq">38,00 €</span></div></div></td>
-                  <td><span class="ocr-conf high">96%</span></td>
-                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
-                  <td>—</td>
+                  <td>La Pepita SL</td>
+                  <td>07/05</td><td>42,50 €</td><td>38,00 €</td><td>—</td>
                   <td><span class="pill green">OK</span></td>
                 </tr>
                 <tr>
                   <td><span class="av purple">NV</span>Núria Vidal</td>
                   <td><span class="pill gray">Allotjament</span></td>
-                  <td>NH Madrid</td><td>25/04</td>
-                  <td><div class="imp-cell"><div class="imp-row"><span class="imp-lbl">Sol·l.</span><span class="imp-sol">95,00 €</span></div><div class="imp-row"><span class="imp-lbl">Atorg.</span><span class="imp-apr">90,00 €</span></div><div class="imp-row"><span class="imp-lbl">Liq.</span><span class="imp-liq">90,00 €</span></div></div></td>
-                  <td><span class="ocr-conf high">94%</span></td>
-                  <td><span class="cert-badge"><i class="ti ti-file-certificate"></i> FE</span></td>
-                  <td>—</td>
+                  <td>NH Madrid</td>
+                  <td>25/04</td><td>95,00 €</td><td>90,00 €</td><td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av green">JM</span>Joan Mora</td>
+                  <td><span class="pill gray">KM</span></td>
+                  <td>Desplaç. propi · Vic → Girona</td>
+                  <td>22/04</td><td>18,20 €</td><td>18,20 €</td><td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av purple">AF</span>Ana Ferrer</td>
+                  <td><span class="pill purple">Esdeveniments</span></td>
+                  <td>Fira Construmat Barcelona<br><span class="mono" style="color:#9B9B99">Fira: Construmat 2026</span></td>
+                  <td>20/04</td><td>112,00 €</td><td>95,00 €</td><td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av amber">SP</span>Sara Puig</td>
+                  <td><span class="pill blue">Restaurant</span></td>
+                  <td>Bar Central</td>
+                  <td>18/04</td><td>34,50 €</td><td>34,50 €</td><td>—</td>
+                  <td><span class="pill green">OK</span></td>
+                </tr>
+                <tr>
+                  <td><span class="av blue">ME</span>Marc Esteve</td>
+                  <td><span class="pill amber">Combustible</span></td>
+                  <td>BP Autopista A-7</td>
+                  <td>15/04</td><td>61,00 €</td><td>61,00 €</td><td>—</td>
                   <td><span class="pill green">OK</span></td>
                 </tr>
               </tbody>
@@ -414,70 +422,6 @@
         <div style="display:flex;justify-content:flex-end;margin-top:14px;gap:8px">
           <button class="btn">Cancel·lar canvis</button>
           <button class="btn primary"><i class="ti ti-check"></i>Desar configuració</button>
-        </div>
-      </section>
-
-      <!-- ========== CATEGORIES ========== -->
-      <section class="screen" id="screen-categories">
-        <div class="card">
-          <div class="card-header">
-            <span class="card-title">Categories de despesa <span class="new-badge">NOU</span></span>
-            <button class="btn primary" style="margin-left:auto"><i class="ti ti-plus"></i>Nova categoria</button>
-          </div>
-          <div class="card-body">
-            <div class="cat-grid">
-              <div class="cat-card">
-                <div class="cat-emoji">🍽️</div>
-                <div class="cat-name">Restaurant</div>
-                <div class="cat-note">Àpats laborals i comercials</div>
-                <div class="cat-req">Comensals obligatoris si &gt;50€</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">⛽</div>
-                <div class="cat-name">Combustible</div>
-                <div class="cat-note">Repostatge vehicle propi</div>
-                <div class="cat-req">Exclòs caps de setmana</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">🛣️</div>
-                <div class="cat-name">Quilometratge</div>
-                <div class="cat-note">Vehicle propi</div>
-                <div class="cat-req">Origen / Destí → km automàtics</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">🅿️</div>
-                <div class="cat-name">Aparcament</div>
-                <div class="cat-note">Pàrquings i zones blaves</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">🛏️</div>
-                <div class="cat-name">Allotjament</div>
-                <div class="cat-note">Hotels i pernoctació laboral</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">🚌</div>
-                <div class="cat-name">Transport</div>
-                <div class="cat-note">Transport públic i taxis</div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">🛣️</div>
-                <div class="cat-name">Peatge</div>
-                <div class="cat-note">Autopistes i vies de peatge</div>
-              </div>
-              <div class="cat-card new-cat">
-                <div class="cat-emoji">🎪</div>
-                <div class="cat-name" style="color:#5B21B6">Esdeveniments / Fires <span class="new-badge">NOU</span></div>
-                <div class="cat-note">Assistència a fires i esdeveniments</div>
-                <div class="cat-req">Camp obligatori: nom de la fira</div>
-                <div style="margin-top:8px"><input type="text" placeholder="Ex: Fira de Lleida 2026" style="font-size:11px;height:28px;border-color:#A78BFA"></div>
-              </div>
-              <div class="cat-card">
-                <div class="cat-emoji">📋</div>
-                <div class="cat-name">Altres</div>
-                <div class="cat-note">Despeses no categoritzades</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

@@ -6,7 +6,6 @@ const SCREENS = {
   'validadors':       'Validadors',
   'rules':            'Regles de conveni',
   'calendar':         'Calendari laboral',
-  'categories':       'Categories de despesa',
   'integracio':       'Integració RRHH',
   'ocr':              'OCR / Intel·ligència Artificial',
   'audit':            'Auditoria',
